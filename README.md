@@ -7,7 +7,7 @@ This project documents set up of Reinforcement learning control algorithm for fl
   * [XPLane](https://www.x-plane.com/)
 * XPlaneConnect (replace this with  different python udp connection file if required)
   * [XPlaneConnect](https://github.com/nasa/XPlaneConnect) [https://github.com/nasa/XPlaneConnect]
-* Tensorforce (Test Benchmark RL algorithm)
+* Tensorforce (Use this to test your algorithm with typical RL Benchmarks)
   *  [Tensorforce](https://github.com/reinforceio/tensorforce) [https://github.com/reinforceio/tensorforce]
 * RL Algorithm (defined  your own RL algorithm)
 * Lua Programming (for seamless interaction with XPlane)
