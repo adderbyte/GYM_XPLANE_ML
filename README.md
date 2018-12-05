@@ -14,8 +14,8 @@ This project documents set up of Reinforcement learning environment for flight c
 
 ## General setup
 
-* Multi-agent set up: In this set up, two or more agents can collaborate or compete to achieve a flight path. Again this can be configured in a typical normal LAN set where we have a central system that co-ordinates the activities of other systems. 
-* Standalone: On a single x plane for a single user.
+* Standalone: single user, single environemnt.
+* Multi-agent set up: In this set up, two or more agents can collaborate or compete in the training process. A central system  co-ordinates the activities of other systems. 
 * Distributed training environment: This set up uses python flask and celery to achieve distributed training on a large network. 
 
 
