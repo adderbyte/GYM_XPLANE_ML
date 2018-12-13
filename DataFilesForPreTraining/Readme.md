@@ -8,4 +8,6 @@ to find the reward or action space approximator or distribution function. This g
 ### How To Use
 In each file, one finds the flight data for a particular flight phase. A string of integer values or numbers is used as a key. For each number the first value set corresponds to state and the second value set corresponds to the action that produced the state. Typically, we assume an autopilot or human pilot is flying the aircraft and at each iteration time or loop the state and action values as seen by the simulator is collected.
 
-### State Variables and Action Definition
+#### State Variables and Action Variables Definition
+
+To be continued  ...
