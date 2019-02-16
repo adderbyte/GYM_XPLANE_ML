@@ -31,11 +31,12 @@ Gym Xplane is an environment bundle for OpenAI Gym.
 
    In the random_example script you have the following configuration. 
     ```
-    cd examples
-    parser = argparse.ArgumentParser()
     client = p3xpc.XPlaneConnect()
-    parser.add_argument('--client', help='client',default=client)
+    env.client = client
     ```
     
-   It is possible to configure a new python xplane connector as desired. The general pattern would be as in the pyxpc.py file. As a minimum a socket connection should be defined  together with a function to get states and send actions.
+   It is possible to configure a new python xplane connector as desired - thus replacing the client. The general pattern would be as in the pyxpc.py file. As a minimum a socket connection should be defined  together with a function to get states and send actions.
+   
+### TO DO
+   Update reward function. (You could define your reward function for your custom scenario too)
     
