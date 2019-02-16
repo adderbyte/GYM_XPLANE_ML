@@ -189,4 +189,4 @@ class XplaneEnv(gym.Env):
 
 
         self.ControlParameters.state14  = np.zeros(shape=(14,))
-        return self.ControlParameters.state14
+        #return self.ControlParameters.state14
