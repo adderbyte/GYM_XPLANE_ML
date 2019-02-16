@@ -29,15 +29,13 @@ Gym Xplane is an environment bundle for OpenAI Gym.
     ```
     for example a typical conda python path is /home/cat/anaconda3/envs/cat/bin/python3.6 . 
 
-
+   In the random_example script you have the following configuration. 
     ```
     cd examples
-    sudo  /path/to/anaconda/python3.6  random_agent.py  --client    $client  
+    parser = argparse.ArgumentParser()
+    client = p3xpc.XPlaneConnect()
+    parser.add_argument('--client', help='client',default=client)
     ```
-
-
-    The `$client` and `$step` are the client connector  to xplane and maximum episode step respectively. This is useful
-    if a new connection script  is defined or desired to be used. However, the p3xpc.py is the present
-    connection script used.
     
-    The `$client_ip` and `$client_port` are the ip and port of the client connecting to xplane.   
+   It is possible to configure a new python xplane connector as desired. The general pattern would be as in the pyxpc.py file. As a minimum a socket connection should be defined  together with a function to get states and send actions.
+    
