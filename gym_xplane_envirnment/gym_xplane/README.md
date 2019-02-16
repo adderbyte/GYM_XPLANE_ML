@@ -25,18 +25,18 @@ Gym Xplane is an environment bundle for OpenAI Gym.
 
     ```
     cd Examples
-    sudo  /path/to/anaconda/python3.6  random_agent.py random_agent.py  
+    sudo  /path/to/anaconda/python3.6  random_agent.py 
     ```
     for example a typical conda python path is /home/cat/anaconda3/envs/cat/bin/python3.6 . 
 
 
     ```
     cd examples
-    sudo  /path/to/anaconda/python3.6  random_agent.py  --client    $client  --episode_step          $step
+    sudo  /path/to/anaconda/python3.6  random_agent.py  --client    $client  
     ```
 
 
-    The `$client` and `$step` are the client connector to xplane and maximum episode step. This is useful
+    The `$client` and `$step` are the client connector  to xplane and maximum episode step respectively. This is useful
     if a new connection script  is defined or desired to be used. However, the p3xpc.py is the present
     connection script used.
     
