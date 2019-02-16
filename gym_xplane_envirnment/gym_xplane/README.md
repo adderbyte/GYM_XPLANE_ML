@@ -24,7 +24,7 @@ Gym Xplane is an environment bundle for OpenAI Gym.
 2. Run examples:
 
     ```
-    cd examples
+    cd Examples
     sudo  /path/to/anaconda/python3.6  random_agent.py random_agent.py  
     ```
     for example a typical conda python path is /home/cat/anaconda3/envs/cat/bin/python3.6 . 
