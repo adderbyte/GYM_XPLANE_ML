@@ -18,7 +18,7 @@ class XplaneEnv(gym.Env):
         self.observation_space = envSpace._observation_space()
         self.episode_steps = self.ControlParameters.episodeStep
         self.max_episode_steps = max_episode_steps
-        print(self.client)
+        #print(self.client)
         #self.step = self._step(action)
     #def __del__(self):
      #   self.client.close()
@@ -27,7 +27,7 @@ class XplaneEnv(gym.Env):
         self.client.close()
         
     def step(self, actions):
-        print('....',self.client)
+        #print('....',self.client)
         
         
         self.ControlParameters.flag = False
@@ -188,5 +188,5 @@ class XplaneEnv(gym.Env):
         self.ControlParameters.episodeStep = 0
 
 
-        states  = np.zeros(shape=(14,))
-        return states
+        self.ControlParameters.state14  = np.zeros(shape=(14,))
+        return self.ControlParameters.state14
