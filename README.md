@@ -10,7 +10,7 @@ This project documents set up of Reinforcement learning environment for flight c
 * Tensorforce (Use this to test your algorithm with typical RL Benchmarks)
   *  [Tensorforce](https://github.com/reinforceio/tensorforce) [https://github.com/reinforceio/tensorforce]
 * RL Algorithm (define  your own RL algorithm or use standard baslines)
-* Lua Programming (for seamless interaction with XPlane)
+* Lua Programming/FlyWithLua (for seamless interaction with XPlane)
 
 ## General setup
 
