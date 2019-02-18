@@ -14,9 +14,9 @@ This project documents set up of Reinforcement learning environment for flight c
 
 ## General setup
 
-* Standalone: single user, single environemnt.
-* Multi-agent set up: In this set up, two or more agents can collaborate or compete in the training process. A central system  co-ordinates the activities of other systems. 
-* Distributed training environment: This set up uses python flask and celery to achieve distributed training on a large network. 
+* GYM XPLANE ENVIRONMENT
+* MULTI AGENT ENVIRONMENT SET UP
+
 
 
 
