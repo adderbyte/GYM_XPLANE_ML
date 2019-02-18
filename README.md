@@ -7,10 +7,11 @@ This project documents set up of Reinforcement learning environment for flight c
   * [XPLane](https://www.x-plane.com/)
 * XPlaneConnect (replace this with  different python udp connection file if required)
   * [XPlaneConnect](https://github.com/nasa/XPlaneConnect) [https://github.com/nasa/XPlaneConnect]
-* Tensorforce (Use this to test your algorithm with typical RL Benchmarks)
-  *  [Tensorforce](https://github.com/reinforceio/tensorforce) [https://github.com/reinforceio/tensorforce]
-* RL Algorithm (define  your own RL algorithm or use standard baslines)
-* Lua Programming/FlyWithLua (for seamless interaction with XPlane)
+* RL Algorithm (define  your own RL algorithm or use standard baslines. )
+  *  [Tensorforce](https://github.com/reinforceio/tensorforce) 
+  *  [RLLIB](https://ray.readthedocs.io/en/latest/rllib.html)
+  *  [OpenAI Baselines](https://github.com/openai/baselines)
+* Lua Programming/[FlyWithLua](https://www.x-plained.com/flywithlua-for-x-plane-11/) (for seamless interaction with XPlane)
 
 ## General setup
 
