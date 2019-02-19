@@ -1,7 +1,7 @@
-# XPlane Settings for xplane_gym
+### XPlane Settings for xplane_gym
 Xplane Settings set up is explained here.
 
-### Required Download
+#### Required Download
   - Download and Install XPlane
 
   - Download XPlaneConnect Connection from the link or use the one already included in this repo.
@@ -12,7 +12,7 @@ Clone this repo
     `git clone PASTE HTTPS OR SSH HERE`
 
     
-### Installation
+#### Installation
   - Install Xplane
   - add XPlaneConnect Connection plugin to the XPlane/Resource/plugins folder.
   - Add FlyWithLua plugin to the XPlane/Resource/plugins folder.
