@@ -1,10 +1,10 @@
 ---------------------------------------------
-## XPlane_ML_Reinforcement_Learning_Autopilot
+##### XPlane_ML_Reinforcement_Learning_Autopilot
 -------------------------------------------------
 This project documents set up of Reinforcement learning environment for flight control. This will enable each user/learner/student/flight enthusiast to come with their own RL algorithm that can interact with and control in real time an aircraft in a simulation environment. The simulator used is ***X-Plane*** (the flight environment). This gives a realistic environment to work with together with parameters to keep the simulation as close to reality as possible.
 
 -------------------
-## Requirement
+##### Requirement
 --------------------
 * X Plane (Demo version) (main requirement)
   * [XPLane](https://www.x-plane.com/)
@@ -17,13 +17,18 @@ This project documents set up of Reinforcement learning environment for flight c
 * Lua Programming/[FlyWithLua](https://www.x-plained.com/flywithlua-for-x-plane-11/) (for seamless interaction with XPlane)
 
 ------------------
-## General setup
+##### General setup
 -------------------
 * GYM XPLANE ENVIRONMENT
-* MULTI AGENT ENVIRONMENT SET UP
+* MULTI AGENT ENVIRONMENT SET UP (Work in progress)
+
+------------------
+### Example Training Episode
+-------------------
+[![Simulation Interface](https://j.gifs.com/wV0nNm.gif)](https://j.gifs.com/wV0nNm.gif)
 
 
 
-![](gif(1).gif)
+
 
 
