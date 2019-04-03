@@ -24,5 +24,6 @@ This project documents set up of Reinforcement learning environment for flight c
 
 
 
+![](gif(1).gif)
 
 
