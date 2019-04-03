@@ -25,7 +25,7 @@ This project documents set up of Reinforcement learning environment for flight c
 ------------------
 ### Example Training Episode
 -------------------
-[![Simulation Interface](https://j.gifs.com/wV0nNm.gif)](https://j.gifs.com/wV0nNm.gif)
+[![Simulation Interface](https://j.gifs.com/OMgJjG.gif)](https://j.gifs.com/OMgJjG.gif)
 
 
 
