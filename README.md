@@ -4,6 +4,13 @@
 This project documents set up of Reinforcement learning environment for flight control. This will enable each user/learner/student/flight enthusiast to come with their own RL algorithm that can interact with and control in real time an aircraft in a simulation environment. The simulator used is ***X-Plane*** (the flight environment). This gives a realistic environment to work with together with parameters to keep the simulation as close to reality as possible.
 
 ------------------
+### Agent-Environment Interaction Flow
+-------------------
+<!-- [![Simulation Interface](https://j.gifs.com/OMgJjG.gif)](https://j.gifs.com/OMgJjG.gif) -->
+![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/input.gif)
+
+
+------------------
 ### Example Training Episode
 -------------------
 <!-- [![Simulation Interface](https://j.gifs.com/OMgJjG.gif)](https://j.gifs.com/OMgJjG.gif) -->
