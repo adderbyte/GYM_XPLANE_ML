@@ -23,7 +23,7 @@ Xplane Settings set up is explained here.
   - Install Xplane
   - add XPlaneConnect Connection plugin to the `XPlane/Resource/plugins` folder.
   - Add FlyWithLua plugin to the `XPlane/Resource/plugins folder`.
-  - Add reloadingScript.lua script, found above, to the scripts folder of flyWithlua. (Not in the Scripts(disabled) folder). If you use the flywithlua that came with this repo then ignore this step. But check to be sure you have a file in the script folder.
+  - Add `reloadingScript.lua` script, found above, to the scripts folder of flyWithlua. (Not in the Scripts(disabled) folder). If you use the flywithlua that came with this repo then ignore this step. But check to be sure you have a file in the script folder.
   - A situation file has been provided for direct use (`cruise.sit`) . Add this file into XPlane in the `XPlane/Output/situations` folder.
   - A flight plan that corresponds to this situation has also been added (`bisi.fms`). ( Load this into xplane in the : `X-Plane/Output/FMS plans` folder )
   Start Xplane
