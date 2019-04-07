@@ -1,10 +1,15 @@
 -------------------
-#### gym xplane environment
+#### Gym Xplane Environment Installation
 -------------------
-# gym-xplane
+
+---------
+##### gym-xplane
+---------
 Gym_Xplane is an XPlane environment bundle for OpenAI Gym. 
 
-## Installation
+-------------
+##### Installation
+---------
 
 1. Install [OpenAI Gym](https://github.com/openai/gym) and its dependencies.
 2. Install the package itself:
@@ -13,21 +18,18 @@ Gym_Xplane is an XPlane environment bundle for OpenAI Gym.
     cd gym_xplane
     pip install -e .
     ```
+-----------------
+##### Usage
+--------------------
 
-## Usage
 1. Start Xplane 
 2. Change the directory to examples folder:
    ```
-    cd ..
-    cd  Examples 
-    sudo  /path/to/anaconda/python3.6  random_agent.py 
+    cd ../examples
     ```
-
-
 2. Run examples:
 
-    ```
-    cd Examples 
+    ``` 
     sudo  /path/to/anaconda/python3.6  random_agent.py 
     ```
    
