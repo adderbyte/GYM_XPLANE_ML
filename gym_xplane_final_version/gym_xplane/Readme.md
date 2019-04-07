@@ -12,7 +12,7 @@ gym_xplane is an  environment bundle for OpenAI Gym. It allows an agent to inter
 2. Install the package itself:
     ```
     git clone  PASTE HTTPS OR SSH HERE // if you have not cloned the repo before
-    cd gym_xplane
+    cd gym_xpalne_final_version/gym_xplane
     pip install -e .
     ```
 -----------------
