@@ -1,7 +1,7 @@
 ----------------------------
 ### Final gym-xplane version
 -----------------------------
-Includes examples for most RL libraries and a tested and working sarsa continuous state algorithm
+Includes examples for most RL libraries and a tested and working sarsa continuous state algorithm. Also, the connection script is included in the gym xplane as `xpc.py` so that the connection starts automatically within the gym environment. If one desires to write or establish the connection outside the gym environment then the first version of the gym_xplane would be fine.
 
 -------------------------------------------
 ### XPlane Settings for xplane_gym
