@@ -2,7 +2,7 @@
 #### gym xplane environment
 -------------------
 # gym-xplane
-Gym Xplane is an environment bundle for OpenAI Gym. 
+Gym_Xplane is an XPlane environment bundle for OpenAI Gym. 
 
 ## Installation
 
@@ -16,7 +16,13 @@ Gym Xplane is an environment bundle for OpenAI Gym.
 
 ## Usage
 1. Start Xplane 
-2. Start random agent example from the `examples` folder
+2. Change the directory to examples folder:
+   ```
+    cd ..
+    cd  Examples 
+    sudo  /path/to/anaconda/python3.6  random_agent.py 
+    ```
+
 
 2. Run examples:
 
@@ -24,14 +30,8 @@ Gym Xplane is an environment bundle for OpenAI Gym.
     cd Examples 
     sudo  /path/to/anaconda/python3.6  random_agent.py 
     ```
-    for example a typical conda python path is /home/cat/anaconda3/envs/cat/bin/python3.6 . 
-
-   In the random_example script you have the following configuration. 
-    ```
-    sudo /home/cat/anaconda3/envs/cat7/bin/python3.7  random_agent.py
-    ```
+   
     
-   It is possible to configure a new python xplane connector as desired - thus replacing the client. The general pattern would be as in the pyxpc.py file. As a minimum a socket connection should be defined  together with a function to get states and send actions.
    
 ### TO DO
    Update reward function. (You could define your reward function for your custom scenario too)
