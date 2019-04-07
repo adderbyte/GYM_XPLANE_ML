@@ -10,7 +10,7 @@ Gym Xplane is an environment bundle for OpenAI Gym.
 3. Install the package itself:
     ```
     git clone  PASTE HTTPS OR SSH HERE // if you have not cloned the repo before
-    cd xplane_gym
+    cd gym_xplane_envirnment/gym_xplane/xplane_gym
     pip install -e .
     ```
 
