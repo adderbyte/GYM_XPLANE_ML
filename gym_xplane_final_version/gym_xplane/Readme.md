@@ -1,11 +1,8 @@
--------------------
-#### Gym Xplane Environment Installation
--------------------
-
 ---------
 ##### gym-xplane
 ---------
-Gym_Xplane is an XPlane environment bundle for OpenAI Gym. 
+gym_xplane is an  environment bundle for OpenAI Gym. It allows an agent to interact seamlessly with the XPlane Simulation environment 
+
 
 -------------
 ##### Installation
