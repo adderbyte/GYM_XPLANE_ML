@@ -3,7 +3,9 @@
 -----------------------------
 Includes examples for most RL libraries and a tested and working sarsa continuous state algorithm
 
+-------------------------------------------
 ### XPlane Settings for xplane_gym
+----------------------------------------
 Xplane Settings set up is explained here.
 
 #### Required Download
