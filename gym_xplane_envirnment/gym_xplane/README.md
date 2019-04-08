@@ -21,9 +21,9 @@ Gym Xplane is an environment bundle for OpenAI Gym.
 -------------------------------
 #### Heading Hold
 -------------------------------
-The scenario tested here is that of keeping heading named Heading Hold. The agent should be able to learn to keep heading for throughout flight while other parameters are kept constant. See diagram below for intuition of what is to be done:
+The scenario tested here is that of keeping heading and altitude. The agent should be able to learn to keep heading and altitude  throughout flight while other parameters are kept constant. This could be extended to scenarion where agents follows waypoints in the flight plan. See diagram below for intuition of what is to be done:
 
-![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/gym_xplane_final_version/axes.png)
+![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/gym_xplane_envirnment/gym_xplane/alt_hold.png)
 
 -------------------------
 #### Usage
