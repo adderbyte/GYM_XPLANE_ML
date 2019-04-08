@@ -1,11 +1,16 @@
-# gym-xplane
+-------------------------
+#### gym-xplane
+---------------------
 Gym Xplane is an environment bundle for OpenAI Gym. 
 
-## Installation
+------------------------
+#### Installation
+---------------------------
 
 1. Install [OpenAI Gym](https://github.com/openai/gym) and its dependencies.
 
 2. Uses [XPlaneConnect Connection Script](https://github.com/nasa/XPlaneConnect) and its dependencies. You can skip the torch client part. 
+
 
 3. Install the package itself:
     ```
@@ -13,14 +18,17 @@ Gym Xplane is an environment bundle for OpenAI Gym.
     cd gym_xplane_envirnment/gym_xplane/xplane_gym
     pip install -e .
     ```
+-------------------------------
+#### Heading Hold
+-------------------------------
+The scenario tested here is that of keeping heading named Heading Hold. The agent should be able to learn to keep heading for throughout flight while other parameters are kept constant. See diagram below for intuition of what is to be done:
 
-## Usage
-1. Start Xplane and add [XPlaneConnect Connection Script](https://github.com/nasa/XPlaneConnect) plugin to the XPlane/Resource/plugins folder.
-2. Add [FlyWithLua](https://github.com/nasa/XPlaneConnect) plugin to the XPlane/Resource/plugins folder.
-3. Add envirommentRestart.lua script to the scripts folder of flightWithlua.
+![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/gym_xplane_final_version/axes.png)
 
-
-
+-------------------------
+#### Usage
+--------------------------
+1. Start Xplane 
 2. Run examples:
 
     ```
