@@ -3,6 +3,13 @@
 -----------------------------
 Includes examples for most RL libraries and a tested and working sarsa continuous state algorithm. Also, the connection script is included in the gym xplane as `xpc.py` so that the connection starts automatically within the gym environment. If one desires to write or establish the connection outside the gym environment then the first version of the gym_xplane would be fine.
 
+-------------------------------
+### Heading Hold
+-------------------------------
+The scenario tested here is that of keeping heading named Heading Hold. The agent should be able to learn to keep heading for throughout flight while other parameters are kept constant. See diagram below for intuition of what is to be done:
+
+
+
 -------------------------------------------
 ### XPlane Settings for xplane_gym
 ----------------------------------------
