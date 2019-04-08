@@ -8,6 +8,8 @@ Includes examples for most RL libraries and a tested and working sarsa continuou
 -------------------------------
 The scenario tested here is that of keeping heading named Heading Hold. The agent should be able to learn to keep heading for throughout flight while other parameters are kept constant. See diagram below for intuition of what is to be done:
 
+![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/gym_xplane_final_version/axes.png)
+
 
 
 -------------------------------------------
