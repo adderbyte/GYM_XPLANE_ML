@@ -32,11 +32,13 @@ This project documents set up of Reinforcement learning environment for flight c
 ------------------
 ##### General setup
 -------------------
-* GYM XPLANE ENVIRONMENT
-* MULTI AGENT ENVIRONMENT SET UP (Work in progress)
+ * GYM XPLANE ENVIRONMENT
+ * MULTI AGENT ENVIRONMENT SET UP (Work in progress)
 
-
-
+------------------
+##### TO DO  
+-------------------
+ * Use XVFB for display
 
 
 
