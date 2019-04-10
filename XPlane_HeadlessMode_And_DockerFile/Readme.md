@@ -3,8 +3,8 @@
 -----------------------
 
 In this repo, the aim is to document how to run:
-  * X-Plane in a Headless mode (Without the Xserver ie the graphics interface). This will enable deploying xplane on servers without 
-  dedicate user interface (for example on  Amazone cloud -- bearing in mind each version deployed must have its own licence)
+  * X-Plane in a Headless mode (Without the Xserver or the graphics interface). This will enable deploying xplane on servers without dedicate user interface (for example on  Amazon cloud -- bearing in mind each version deployed must have its own licence).
+  * It is also preferable to run with XServer or the graphics interface for the first time to ensure everything is working as intended. Afterwards in order to deploy agent algorithm on large scale there should be no need for the GUI or XServer. Headless mode will save a lot in computation cost and time.
   * Investigate Docker set up for running xplane
 
 --------
