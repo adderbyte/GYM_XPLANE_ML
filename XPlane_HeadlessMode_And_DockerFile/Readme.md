@@ -10,7 +10,8 @@ In this repo, the aim is to document how to run:
 --------
 ##### Headless Mode (UNIX OR LINUX DISTRO)
 ------
-
+Assumes that XPlane has been installed.
+ 
  1. Install  [XVFB](https://www.x.org/archive/X11R7.6/doc/man/man1/Xvfb.1.xhtml) 
  2. Put bash file in XPlane folder.
  3. change directory to the XPlane folder
