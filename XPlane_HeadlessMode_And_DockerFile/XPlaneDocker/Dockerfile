@@ -1,5 +1,5 @@
 FROM ubuntu:18.04 as base
-MAINTAINER Admatic Engineering adderbyte@icloud.com
+MAINTAINER adderbyte  adderbyte@icloud.com
 ### Stage 1 - add/remove packages ###
 
 
