@@ -34,8 +34,8 @@ The scenario tested here is that of keeping heading and altitude. The agent shou
 | --- | --- |
 | Speed | 90 Knots True |
 | Pitch | 3 |
-| Altitude | 1200FT MSL|
-| Heading | 164 deg |
+| Altitude | 500FT MSL|
+| Heading | 167 deg |
 
 | Action Parameter | Action type | Action Value Range |
 | --- | --- |---|
