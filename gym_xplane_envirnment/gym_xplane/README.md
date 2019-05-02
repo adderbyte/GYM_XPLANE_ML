@@ -25,6 +25,25 @@ The scenario tested here is that of keeping heading and altitude. The agent shou
 
 ![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/gym_xplane_envirnment/gym_xplane/alt_hold.png)
 
+
+#####  HeadingHold Configuration
+
+| Aircraft Parameter | Parameter Value |
+| --- | --- |
+| Speed | 90 Knots True |
+| Pitch | 3 |
+| Altitude | 1200FT MSL|
+| Heading | 164 deg |
+
+| Action Parameter | Action type | Action Value Range |
+| --- | --- |---|
+| Latitudinal Stick | [Box](http://gym.openai.com/docs/#spaces) |  [-1,1] |
+| Longitudinal Stick  | [Box](http://gym.openai.com/docs/#spaces) | [-1,1] |
+| Rudder Pedals | [Box](http://gym.openai.com/docs/#spaces) | [-1,1]|
+| Throttle | [Box](http://gym.openai.com/docs/#spaces) | [-1/4,1] |
+
+
+
 -------------------------
 #### Usage
 --------------------------
