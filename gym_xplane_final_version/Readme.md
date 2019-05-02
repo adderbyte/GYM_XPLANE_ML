@@ -10,6 +10,23 @@ The scenario tested here is that of keeping heading named Heading Hold. The agen
 
 ![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/gym_xplane_final_version/axes.png)
 
+----------------------------------
+#####  Heading Hold Configuration
+----------------------------
+
+| Aircraft Parameter | Parameter Value |
+| --- | --- |
+| Speed | 90 Knots True |
+| Pitch | 3 |
+| Altitude | 1200FT MSL|
+| Heading | 164 deg |
+
+| Action Parameter | Action type | Action Value Range |
+| --- | --- |---|
+| Latitudinal Stick | [Box](http://gym.openai.com/docs/#spaces) |  [-1,1] |
+| Longitudinal Stick  | [Box](http://gym.openai.com/docs/#spaces) | [-1,1] |
+| Rudder Pedals | [Box](http://gym.openai.com/docs/#spaces) | [-1,1]|
+| Throttle | [Box](http://gym.openai.com/docs/#spaces) | [-1/4,1] |
 
 
 -------------------------------------------
