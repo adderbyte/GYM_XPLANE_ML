@@ -26,7 +26,9 @@ The scenario tested here is that of keeping heading and altitude. The agent shou
 ![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/gym_xplane_envirnment/gym_xplane/alt_hold.png)
 
 
-#####  HeadingHold Configuration
+----------------------------------
+#####  Heading Hold Configuration
+----------------------------
 
 | Aircraft Parameter | Parameter Value |
 | --- | --- |
