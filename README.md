@@ -40,6 +40,7 @@ This project documents set up of Reinforcement learning environment for flight c
 -------------------
  * Use XVFB for fake display.
  * Docker support 
+ * Algorithm implementations (high priority)
 
 
 
