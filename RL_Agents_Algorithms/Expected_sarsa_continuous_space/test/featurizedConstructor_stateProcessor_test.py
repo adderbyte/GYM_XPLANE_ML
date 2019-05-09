@@ -24,6 +24,6 @@ n = 5
 scaler_tansform = sp.standardizer(sp.state_space_sample(n,env)) # get samples from the state and fit a standard scaler to it
 print('standard scaler and fit: ', scaler_tansform)
 # apply the featurizer module which is a non-linear mapping  on feature sapce 
-processedFeature = feature_constructor.FeatureConstructor('RadialBasis',scaler_tansform.fit_transform(sp.state_space_sample(n,env))).ProcessedState
+processedFeature = feature_constructor.FeatureConstructor('RadialBasis',scaler_tansform.transform(sp.state_space_sample(n,env))).ProcessedState
 print('processed feature mountain car: ',processedFeature)
 #############################################################################
