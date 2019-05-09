@@ -1,5 +1,5 @@
  
-import  expectedsarsa.exception as ThrowErrors #import ExpectedSarsaError # handle errors
+import  expectedsarsa.exception as ThrowErrors # handle errors
 
 
 class FeatureConstructor(object):
