@@ -1,5 +1,6 @@
 import numpy as np
 from sklearn import preprocessing
+import  expectedsarsa.exception as ThrowErrors # handle errors
 
 def state_space_sample(n,environment):
 
@@ -28,7 +29,8 @@ def state_space_sample(n,environment):
     # assert the  state space is box. convert the state space from type space.Box to string
     # check that the fist word in the string is a 'Box'. The regular expression in square bracket gets the 
     # first word separated by  '('  which shuld be the word 'Box': apply len to get the length
-    assert str(state_space_type)[:len(str(state_space_type).split('(', 1)[0])]== box_type  # this assertion should be true to run 
+    if not  str(state_space_type)[:len(str(state_space_type).split('(', 1)[0])]== box_type:
+            raise ThrowErrors.ExpectedSarsaError('state space should be continuous')
     #######################################################################
 
 
