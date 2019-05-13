@@ -14,7 +14,7 @@ This project documents set up of Reinforcement learning environment for flight c
 ### Example Training Episode
 -------------------
 <!-- [![Simulation Interface](https://j.gifs.com/OMgJjG.gif)](https://j.gifs.com/OMgJjG.gif) -->
-![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/input.gif)
+![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/images/input.gif)
 
 -------------------
 ##### Requirements
