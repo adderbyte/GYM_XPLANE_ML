@@ -11,3 +11,5 @@ In each file, one finds the flight data for a particular flight phase. A string 
 #### State Variables and Action Variables Definition
 
 To be continued  ...
+
+- [ ] update this part of the project. Change to be compatible with python3 and the gym Xplane Environment
