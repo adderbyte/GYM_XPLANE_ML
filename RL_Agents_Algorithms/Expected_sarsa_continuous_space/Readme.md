@@ -21,6 +21,6 @@ Work in progress ...
 -------------------------
 ###### To-Do List
 --------------------
- - [ ] use LSTM to model Actor (action predictor)   -- LSTM models MDP         pretty well 
+ - [ ] use LSTM to model Actor (action predictor)   -- LSTM models MDP pretty well 
  - [ ] save sample action space data 
- - [ ] pre-train LSTM model on saved action space data (LSTM takes longer to train why not pretrain ) (pretraining: give model apriori knowledge of sample space)
+ - [ ] pre-train actor (LSTM) and critic module (LSTM takes longer to train why not pretrain ) (pretraining: give model apriori knowledge of sample space) 
