@@ -28,5 +28,5 @@ class xplane_space():
             "wing_sweep_ratio":  spaces.Box(low=-100, high=100, shape=()),"flap_ratio":  spaces.Box(low=-100, high=100, shape=()),
             "speed": spaces.Box(low=-2205, high=2205, shape=())})
         '''
-        return spaces.Box(np.array([ -360, -360, 0 ,-290,-100,-360,0,-1000,-1300,-1000,-1000]),np.array([360,360,8500,290,100,360,1,1000,1300,1000,1000]))
+        return spaces.Box(np.array([ -360, -360, 0 ,-290,-100,-360,-360,-1000,-1300,-1000,-1000]),np.array([360,360,8500,290,100,360,360,1000,1300,1000,1000]))
       
