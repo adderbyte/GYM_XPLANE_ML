@@ -100,7 +100,7 @@ class XplaneEnv(gym.Env):
 
             # **********************************************
             ### NOTE:  One could Disable the stability augmentation in XPlane in other to run the simulation without sending pause commands
-            #         In that case comment out the send XplaneEnv.CLIENT.pauseSim(False).
+            #         In that case comment out the send XplaneEnv.CLIENT.pauseSim(False) and sleep(0.006).
             #         Previous action is compared to present action to check that after sending an action the action  
             #         on the controls in the next iteration is same as that which was sent. 
             #         If this is not true then stability augmentation is acting on the controls too -- this gives very unstable
