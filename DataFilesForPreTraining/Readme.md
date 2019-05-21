@@ -15,7 +15,7 @@ ________________________________________________________________________________
  For each data file : A string of integer values or numbers is used as a key. For each number the first value set corresponds to state and the second value set corresponds to the action . Typically, we assume an autopilot or human pilot is flying the aircraft and at each iteration time or loop the state and action values as seen by the simulator is collected.
 
 ___________________________________________________________________________________
-###### Note Pretraining_data JSON File Convention
+###### TO-Do
 ___________________________________________________________________________________
 
 - [ ] update this part of the project. Change to be compatible with python3 and the gym Xplane Environment
