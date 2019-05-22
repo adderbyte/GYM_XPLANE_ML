@@ -41,15 +41,7 @@ class XplaneEnv(gym.Env):
         except:
             print("connection error. Check your paramters")
         print('I am client', XplaneEnv.CLIENT )
-        #self.clientAddr = clientAddr
-        #self.xpHost = xpHost
-        #self.xpPort= xpPort
-        #self.clientPort = clientPort
-        #self.timeout = timeout
-        #self.max_episode_steps=max_episode_steps
-        #self.count = 0
-        #CLIENT = initial.connect(clientAddr,xpHost,xpPort,clientPort,timeout ,max_episode_steps)
-        #CLIENT = xp.XPlaneConnect(self.clientAddr,self.xpHost,self.xpPort,self.clientPort,self.timeout ,self.max_episode_steps)
+        
          
     
 
@@ -80,17 +72,14 @@ class XplaneEnv(gym.Env):
     def step(self, actions):
      
 
-        self.test=False
-        self.ControlParameters.flag = False
-        #self.ControlParameters.episodeReward = 0
-        #ControlParameters.totalReward = 0
-        #self.episode_steps += 1
+        self.test=False # if true, only test paramters returned. for Model tesing 
+        self.ControlParameters.flag = False # for synchronisation of training
+        #self.ControlParameters.episodeReward = 0  # for reward in each episode
+        #self.ControlParameters.totalReward = 0 # reward for final episode aimed at penalizing crash if it crashes finally 
+        
         reward = 0.
-        tempreward2 =0.
-        tempreward3 = 0.
-        perturbationAllowed = 3.5
+        perturbationAllowed = [3.5,15] # pertubation allowed on altitude and heading
         actions_ = []
-        minimumPitch = 3.0
         
         j=0  # getting simulaion timing measurement
         
@@ -100,7 +89,7 @@ class XplaneEnv(gym.Env):
 
             # **********************************************
             ### NOTE:  One could Disable the stability augmentation in XPlane in other to run the simulation without sending pause commands
-            #         In that case comment out the send XplaneEnv.CLIENT.pauseSim(False) and sleep(0.006).
+            #         In that case comment out the send XplaneEnv.CLIENT.pauseSim(False).
             #         Previous action is compared to present action to check that after sending an action the action  
             #         on the controls in the next iteration is same as that which was sent. 
             #         If this is not true then stability augmentation is acting on the controls too -- this gives very unstable
@@ -113,7 +102,7 @@ class XplaneEnv(gym.Env):
 
 
             #############################################
-            # chck pevious acion is sam as he ain on control
+            # chck pevious action is same as the one on the controls
             print("prevous action",self.actions) # prvious ation
             print("action on ctrl ...",XplaneEnv.CLIENT.getCTRL()) # action on control surface
             # if this is not sae then there are unaccounted forcs that could affct ainin
@@ -122,15 +111,15 @@ class XplaneEnv(gym.Env):
             #############################################
             
             #############################################
-            i=clock() # get the time up til now
+            i=clock() # get the time up till now
             XplaneEnv.CLIENT.pauseSim(False) # unpause x plane simulation
-            XplaneEnv.CLIENT.sendCTRL(actions) # send acion
-            sleep(0.0003)  # sleep for a while so hat ation is excuted
-            self.actions = actions  # set the previous action to curent action. 
-                                    # This will be compared to action on control in nxt iteraion
-            XplaneEnv.CLIENT.pauseSim(True) # pause imulation s tha no oher action acts on he aicaft
-            j=clock() # get the time now, i-j is the time a which he simulaion is unpaused and actio exeuted
-            # fom this point the simulation is paued so that we compute rewad and state-action value
+            XplaneEnv.CLIENT.sendCTRL(actions) # send action
+            sleep(0.0003)  # sleep for a while so that action is executed
+            self.actions = actions  # set the previous action to current action. 
+                                    # This will be compared to action on control in next iteraion
+            XplaneEnv.CLIENT.pauseSim(True) # pause simulation so that no other action acts on he aircaft
+            j=clock() # get the time now, i-j is the time at which the simulation is unpaused and action exeuted
+            # fom this point the simulation is paused so that we compute reward and state-action value
             ################################################# 
             
             #################################################
@@ -140,40 +129,43 @@ class XplaneEnv(gym.Env):
             ################################################
             
             #################################################
-            # get he state variabls here . The paameter file has all the required variables
-            # we only need to call te cient intrface and get parameters defined as stateVariable
-            # in parameter file
+            # get the state variabls here . The parameter file has all the required variables
+            # we only need to call the client interface and get parameters defined as stateVariable
+            # in parameter file as below
             stateVariableTemp = XplaneEnv.CLIENT.getDREFs(self.ControlParameters.stateVariable) 
             # the client interface automaically gets the position paameters
             self.ControlParameters.stateAircraftPosition = list(XplaneEnv.CLIENT.getPOSI());
             # Remove brackets from state variable and store in the dictionary
             self.ControlParameters.stateVariableValue = [i[0] for i in stateVariableTemp]
-            # combine th position and other state parameters in temporar variable here
+            # combine the position and other state parameters in temporary variable here
             state =  self.ControlParameters.stateAircraftPosition + self.ControlParameters.stateVariableValue
             ########################################################
 
             ########################################################
-            # other paameters requie for training
-            # there are numeous parameter and we could xpimnt hee
-            # rewardVector : distance to the target . This is st along he hading and alitude.
+            # **********************************************reward parametera**********************
+            # rewardVector : distance to the target . This is distance along the heading and altitude.
             # this is set to motivate he agent to mov forad in time . Accumulate disance
             rewardVector = XplaneEnv.CLIENT.getDREF(self.ControlParameters.rewardVariable)[0][0] 
-            headingReward = 164 # tagt heading
+            headingReward = 164 # the heading target
             minimumAltitude= 12000 # Targrt Altitude
             minimumRuntime = 210.50 # Target runtime
+            # ****************************************************************************************
+
+            # *******************************other training parameters ******************
+            # consult https://www.siminnovations.com/xplane/dataref/index.php for full list of possible parameters
             P = XplaneEnv.CLIENT.getDREF("sim/flightmodel/position/P")[0][0] # moment P
             Q = XplaneEnv.CLIENT.getDREF("sim/flightmodel/position/Q")[0][0] # moment Q
             R = XplaneEnv.CLIENT.getDREF("sim/flightmodel/position/R")[0][0]  # moment R
-            hstab = XplaneEnv.CLIENT.getDREF("sim/flightmodel/controls/hstab1_elv2def")[0][0]
-            vstab = XplaneEnv.CLIENT.getDREF("sim/flightmodel/controls/vstab2_rud1def")[0][0]
-            ################################################################################3
+            hstab = XplaneEnv.CLIENT.getDREF("sim/flightmodel/controls/hstab1_elv2def")[0][0] # horizontal stability : not use for now
+            vstab = XplaneEnv.CLIENT.getDREF("sim/flightmodel/controls/vstab2_rud1def")[0][0] # vertical stability : not used for now
+            # ******************************************************************************
+            ################################################################################
 
             ##############################################################################
-            # make sure the state variabl is of appopriate length
-            # it is amso possible to overwit some state vaiable
-            # the ditionary name a not inicativ of the variable name  times. his is used for aining
-
-            if len(state) == self.statelength:
+            # check that all parameters have been collected. This is done by checking the legth of list
+            # It is possible because of network failure that all parameters are not retrieved on UDP
+            # In that case previous state / last full state will be used. check the except of this try.
+            if len(state) == self.statelength: # this should be true if len(state) is 10
 
                 self.ControlParameters.state14['roll_rate'] = P #  The roll rotation rates (relative to the flight)
                 self.ControlParameters.state14['pitch_rate']= Q    # The pitch rotation rates (relative to the flight)
@@ -183,15 +175,9 @@ class XplaneEnv(gym.Env):
                 self.ControlParameters.state14['velocity_x']= state[6] # local velocity x  OpenGL coordinates
                 self.ControlParameters.state14['velocity_y']= state[7] # local velocity y  OpenGL coordinates              
                 self.ControlParameters.state14['velocity_z']= state[8] # local velocity z   OpenGL coordinates
-                self.ControlParameters.state14['delta_altitude']= abs(state[2] - minimumAltitude)#state[8]
-                self.ControlParameters.state14['delta_heading']= abs(state[5] - headingReward) #state[9]
-                self.ControlParameters.state14['yaw_rate']= R #The yaw rotation rates (relative to the flight)
-                #self.ControlParameters.state14['wing_sweep_ratio']= state[11] 
-                #self.ControlParameters.state14['flap_ratio']= state[12]
-                #self.ControlParameters.state14['speed']=state[13]
-                #state14 = [i for i in self.ControlParameters.state14.values()]
-               
-                self.ControlParameters.state14 = self.ControlParameters.state14 #self.ControlParameters.state14
+                self.ControlParameters.state14['delta_altitude']= abs(state[2] - minimumAltitude) # difference in altitude
+                self.ControlParameters.state14['delta_heading']= abs(state[5] - headingReward) # difference in heading
+                self.ControlParameters.state14['yaw_rate']= R # The yaw rotation rates (relative to the flight)
                 if self.test :
                     # if testing use append longitude and latitude as  the state variable
                     # The intuition for this is that during testing we need lat and long to be able to project the position of the
@@ -205,13 +191,14 @@ class XplaneEnv(gym.Env):
             ######################################################################
             
             ###########################################################################
+            # *******************************reward computation ******************
             # parameters required for reward
             # time is not used here
             timer =  XplaneEnv.CLIENT.getDREF(self.ControlParameters.timer2)[0][0] # running time of simulation
             target_state = [abs(headingReward),minimumAltitude,0.25]  # taget situation -heading, altitude, and distance 
             xplane_state = [ abs(state[5]),state[2],rewardVector]  # present situation -heading, altitude, and distance 
             # if the heading and altitude are within small pertubation set good reward othewise penalize it.
-            if  (abs( abs(state[5])-headingReward)) < perturbationAllowed and (state[2]-minimumAltitude) < perturbationAllowed:
+            if  (abs( abs(state[5])-headingReward)) < perturbationAllowed[0] and (state[2]-minimumAltitude) < perturbationAllowed[1]:
                 reward = self.rewardCalcul(target_state,xplane_state,sigma=0.85)[0]
                 self.ControlParameters.episodeReward = reward
             else:
@@ -222,7 +209,8 @@ class XplaneEnv(gym.Env):
 
             ###########################################################################
             # end of episode setting
-            # detect cash and pnalize oherwise good reward
+            # detect crash and penalize the agênt
+            # if crash add -3 otherwose reward ramin same
             if XplaneEnv.CLIENT.getDREFs(self.ControlParameters.on_ground)[0][0] >= 1 or XplaneEnv.CLIENT.getDREFs( self.ControlParameters.crash)[0][0] <=0:
                 self.ControlParameters.flag = True # end of episode flag
                 self.ControlParameters.reset = False # this checks that duplicate penalizaion is not aplied especiall when sim 
@@ -237,7 +225,8 @@ class XplaneEnv(gym.Env):
                     #self.ControlParameters.totalReward -= 1
                 else: 
                     pass
-            # set flag to true if maximum steps has been achieved. Thus episode is finished.    
+            # set flag to true if maximum steps has been achieved. Thus episode is finished.
+            # set the maximum episode step to the value you want    
             elif self.ControlParameters.episodeStep > self.max_episode_steps:
                 self.ControlParameters.flag = True
                 self.ControlParameters.totalReward  = self.ControlParameters.episodeReward
