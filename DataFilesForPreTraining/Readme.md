@@ -4,10 +4,10 @@ ________________________________________________________________________________
 
 The main files are:
     ```
-    xpc.py``` and ```
+    p3xpc.py``` and ```
     parameters.py
      ```
-. These two python files are used in the the pretraining data collection scripts for different scenario (check `Sample_Scripts`). The `xpc.py` handles connection to Xplane while the `parameters.py` contains the parameters definitions. The folder `Sample_Scripts` contains sample scripts that have been used for data collection for different tasks. This could be adapted for custom scenario. The `Pretraining_data` file contains the JSON file for collected traning data.  The names of the scripts or data file would typically reflect the task to be completed eg (keepHeading.py implies keep heading scenario script while the data file would be named keepHeading.json).
+. These two python files are used in the the pretraining data collection scripts for different scenario (check `Sample_Scripts`). The `p3xpc.py` handles connection to Xplane while the `parameters.py` contains the parameters definitions. The folder `Sample_Scripts` contains sample scripts that have been used for data collection for different tasks. This could be adapted for custom scenario. The `Pretraining_data` file contains the JSON file for collected traning data.  The names of the scripts or data file would typically reflect the task to be completed eg (keepHeading.py implies keep heading scenario script while the data file would be named keepHeading.json).
 
 ___________________________________________________________________________________
 ###### Note Pretraining_data JSON File Convention
