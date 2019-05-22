@@ -45,7 +45,7 @@ def getParameters():
 		"totalReward":0.,
 		"flag": False,
 		"state":[0.,0.,0.,0.,0.,0.,0.],
-		"state14":{"Latitude":0,"Longitude":0, "Altitude": 0,"Pitch":0,"Roll":0, "Heading": 0,  "gear":0,"yoke_pitch_ratio":0,"yoke_roll_ratio":0, "yoke_heading_ratio":0,"alpha":0},
+		"state14":{"roll_rate":0,"pitch_rate":0, "altitude": 0,"Pitch":0,"Roll":0, "velocity_x": 0,  "velocity_y":0,"velocity_z":0,"delta_altitude":0, "delta_heading":0,"yaw_rate":0},
 		"episodeStep":0,
 		"reset":False
 
