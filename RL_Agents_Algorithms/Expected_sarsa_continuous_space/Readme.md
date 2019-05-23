@@ -21,8 +21,8 @@ Work in progress ...
 -------------------------
 ###### To-Do List
 --------------------
- - [ ] use LSTM to model Actor (action predictor)   -- LSTM models MDP pretty well 
- - [ ] save sample action space data 
+ - [x] use LSTM to model Actor (action predictor)   -- LSTM models MDP pretty well 
+ - [x] save sample action space data 
  - [ ] pre-train LSTM (actor network) (LSTM takes longer to train why not pretrain. Pretrain: give model apriori knowledge of sample space) 
  - [ ] MLE (Maximum Likelihood Estimate ) for probabilistic distribution evaluation of preicted values from LSTM.
  - [ ] Weight action values by the probabilities of MLE
