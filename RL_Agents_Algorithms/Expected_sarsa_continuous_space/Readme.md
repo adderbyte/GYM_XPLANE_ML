@@ -26,3 +26,9 @@ Work in progress ...
  - [ ] pre-train LSTM (actor network) (LSTM takes longer to train why not pretrain. Pretrain: give model apriori knowledge of sample space) 
  - [ ] Gaussian Mixture model (Using Maximum Likelihood Estimate algorithm) for probabilistic distribution evaluation of preicted values from LSTM.
  - [ ] Weight action values by the probabilities of MLE
+ 
+ -------------------------
+ #### Note on GMM-MLE
+ -------------------------
+ 
+ ![equation](https://latex.codecogs.com/svg.latex?%5Cmathb%7BP%7D%20%28a%20%7C%20b%29)
