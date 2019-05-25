@@ -56,7 +56,7 @@ def main():
     data = {}  ## for storing each episode data
     action = None  ## no action on start
     count = 0 ## count for identifying each iteration
-    minimumAltitude= 12000 # Targêt Altitude
+    minimumAltitude= 3657.6 # Targêt Altitude 1200Ft
     headingReward = 167 # target  heading
     ##########################################################################################
     with xpc.XPlaneConnect() as client:
