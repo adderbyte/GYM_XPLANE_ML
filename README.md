@@ -18,9 +18,11 @@ This project documents set up of Reinforcement learning environment for flight c
 <!-- [![Simulation Interface](https://j.gifs.com/OMgJjG.gif)](https://j.gifs.com/OMgJjG.gif) -->
 ![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/images/input.gif)
 
+
 ------------------
 ### Action Space Parameters
 -------------------
+` Find below,  all the action space parameters avaibliable but the paramters utilized in a specific flight task depends on the scenario.` For example in the keepHeading or Heading Hold scenario only the first 4 parameters  were utilized from the list.
 
 | Action Space Parameter | Action type | Action Value Range |
 | --- | --- |---|
@@ -32,8 +34,9 @@ This project documents set up of Reinforcement learning environment for flight c
 | Flaps | [Box](http://gym.openai.com/docs/#spaces) | [0,1] |
 | Speedbrakes | [Box](http://gym.openai.com/docs/#spaces) | [-0.5,1.5] |
 
+
 -------------------
-##### Requirements
+#### Requirements
 --------------------
 * X Plane (Demo version) (main requirement)
   * [XPLane](https://www.x-plane.com/)
@@ -45,11 +48,13 @@ This project documents set up of Reinforcement learning environment for flight c
   *  [OpenAI Baselines](https://github.com/openai/baselines)
 * Lua Programming/[FlyWithLua](https://www.x-plained.com/flywithlua-for-x-plane-11/) (for seamless interaction with XPlane)
 
+
 ------------------
-##### General setup
+#### General setup
 -------------------
  * GYM XPLANE ENVIRONMENT
  * MULTI AGENT ENVIRONMENT SET UP (Work in progress)
+
 
 ------------------
 ##### TO DO  
