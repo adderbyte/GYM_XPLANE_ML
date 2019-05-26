@@ -22,12 +22,15 @@ This project documents set up of Reinforcement learning environment for flight c
 ### Action Space Parameters
 -------------------
 
-| Action Parameter | Action type | Action Value Range |
+| Action Space Parameter | Action type | Action Value Range |
 | --- | --- |---|
 | Latitudinal Stick | [Box](http://gym.openai.com/docs/#spaces) |  [-1,1] |
 | Longitudinal Stick  | [Box](http://gym.openai.com/docs/#spaces) | [-1,1] |
 | Rudder Pedals | [Box](http://gym.openai.com/docs/#spaces) | [-1,1]|
 | Throttle | [Box](http://gym.openai.com/docs/#spaces) | [-1/4,1] |
+| Gear | [Discrete](http://gym.openai.com/docs/#spaces) | 0,1 |
+| Flaps | [Box](http://gym.openai.com/docs/#spaces) | [0,1] |
+| Speedbrakes | [Box](http://gym.openai.com/docs/#spaces) | [-0.5,1.5] |
 
 -------------------
 ##### Requirements
