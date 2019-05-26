@@ -18,6 +18,17 @@ This project documents set up of Reinforcement learning environment for flight c
 <!-- [![Simulation Interface](https://j.gifs.com/OMgJjG.gif)](https://j.gifs.com/OMgJjG.gif) -->
 ![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/images/input.gif)
 
+------------------
+### Action Space Parameters
+-------------------
+
+| Action Parameter | Action type | Action Value Range |
+| --- | --- |---|
+| Latitudinal Stick | [Box](http://gym.openai.com/docs/#spaces) |  [-1,1] |
+| Longitudinal Stick  | [Box](http://gym.openai.com/docs/#spaces) | [-1,1] |
+| Rudder Pedals | [Box](http://gym.openai.com/docs/#spaces) | [-1,1]|
+| Throttle | [Box](http://gym.openai.com/docs/#spaces) | [-1/4,1] |
+
 -------------------
 ##### Requirements
 --------------------
