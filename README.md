@@ -22,7 +22,7 @@ This project documents set up of Reinforcement learning environment for flight c
 ------------------
 ### Action Space Parameters
 -------------------
-` Find below,  all the action space parameters avaibliable but the paramters utilized in a specific flight task depends on the scenario.` For example in the keepHeading or Heading Hold scenario only the first 4 parameters  were utilized from the list.
+` Find below,  all the action space parameters. the parameters utilized in a specific flight task will depend on the scenario.` For example in the keepHeading or Heading Hold scenario only the first 4 parameters  were utilized from the list.
 
 | Action Space Parameter | Action type | Action Value Range |
 | --- | --- |---|
