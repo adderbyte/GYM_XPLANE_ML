@@ -54,7 +54,7 @@ client.getPOSI() # get the lat, long,altitude, pitch, roll, heading, gear
 
 ```
 
-`client` (UDP connector) already has a function `getPOSI` that helps read the `latitude, longitude, altitude, pitch, roll, heading`. Other parameters could be added by using the client `getDREF` function. Note that the string "sim/flightmodel/position/P" is gotten from the Xplane Dataref file referenced earlier ([XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php))
+`client` (UDP connector) already has a function `getPOSI` that helps read the `latitude, longitude, altitude, pitch, roll, heading`. Other parameters could be added by using the client `getDREF` function. Note that the string `"sim/flightmodel/position/P"` is gotten from the Xplane Dataref file referenced earlier ([XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php))
 
 
 
