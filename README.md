@@ -37,17 +37,25 @@ This project documents set up of Reinforcement learning environment for flight c
 ------------------
 ### State Space Parameters
 -------------------
-`The state space parameters are well documented in` [XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php).
+`The state space parameters are well documented in` [XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php) and checking . The state space will also depend on the task. Usually a UDP connection ([XPlaneConnect](https://github.com/nasa/XPlaneConnect) [https://github.com/nasa/XPlaneConnect]) is required to read this parameter from XPlane. 
 
 | Action Space Parameter | Action type | Action Value Range |
 | --- | --- |---|
-| Latitudinal Stick | [Box](http://gym.openai.com/docs/#spaces) |  [-1,1] |
-| Longitudinal Stick  | [Box](http://gym.openai.com/docs/#spaces) | [-1,1] |
-| Rudder Pedals | [Box](http://gym.openai.com/docs/#spaces) | [-1,1]|
-| Throttle | [Box](http://gym.openai.com/docs/#spaces) | [-1/4,1] |
-| Gear | [Discrete](http://gym.openai.com/docs/#spaces) | 0,1 |
-| Flaps | [Box](http://gym.openai.com/docs/#spaces) | [0,1] |
-| Speedbrakes | [Box](http://gym.openai.com/docs/#spaces) | [-0.5,1.5] |
+| velocity_x | [Box](http://gym.openai.com/docs/#spaces) |  [0,120] |
+| velocity_y  | [Box](http://gym.openai.com/docs/#spaces) | [0,120] |
+| delta_heading | [Box](http://gym.openai.com/docs/#spaces) | [-300,300]|
+
+The range of each parameter value would also depend on the configuration. Example of how to read parameter from Xplane is shown below:
+
+```
+client = xpc.XPlaneConnect() # UDP connector
+client.getDREF("sim/flightmodel/position/P")[0][0] # moment P
+client.getPOSI() # get the lat, long,altitude, pitch, roll, heading, gear
+
+```
+
+`client` (UDP connector) already has a function `getPOSI` that helps read the `latitude, longitude, altitude, pitch, roll, heading`. Other parameters could be added by using the client `getDREF` function. Note that the string "sim/flightmodel/position/P" is gotten from the Xplane Dataref file referenced earlier ([XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php))
+
 
 
 -------------------
