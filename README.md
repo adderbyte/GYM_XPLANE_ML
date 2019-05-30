@@ -39,7 +39,7 @@ This project documents set up of Reinforcement learning environment for flight c
 -------------------
 `The state space parameters are well documented in` [XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php) and checking . The state space will also depend on the task. Usually a UDP connection ([XPlaneConnect](https://github.com/nasa/XPlaneConnect)) is required to read this parameter from XPlane. 
 
-| Action Space Parameter | Action type | Action Value Range |
+| State Space Parameter | State type | State Value Range |
 | --- | --- |---|
 | velocity_x | [Box](http://gym.openai.com/docs/#spaces) |  [0,120] |
 | velocity_y  | [Box](http://gym.openai.com/docs/#spaces) | [0,120] |
