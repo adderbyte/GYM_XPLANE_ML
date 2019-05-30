@@ -37,7 +37,7 @@ This project documents set up of Reinforcement learning environment for flight c
 ------------------
 ### State Space Parameters
 -------------------
-`The state space parameters are well documented in` [XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php) and checking . The state space will also depend on the task. Usually a UDP connection ([XPlaneConnect](https://github.com/nasa/XPlaneConnect)) is required to read this parameter from XPlane. 
+`The state space parameters are well documented in` [XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php) . The number of state space parameters will also depend on the task. It is possible to use a derived state paramter. Usually a UDP connection ([XPlaneConnect](https://github.com/nasa/XPlaneConnect)) is required to read this parameter from XPlane. 
 
 | State Space Parameter | State type | State Value Range |
 | --- | --- |---|
