@@ -37,7 +37,7 @@ This project documents set up of Reinforcement learning environment for flight c
 ------------------
 ### State Space Parameters
 -------------------
-` The state space parameters are well documented in ` [XPlane Data Ref] (https://www.siminnovations.com/xplane/dataref/index.php).
+`The state space parameters are well documented in` [XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php).
 
 | Action Space Parameter | Action type | Action Value Range |
 | --- | --- |---|
