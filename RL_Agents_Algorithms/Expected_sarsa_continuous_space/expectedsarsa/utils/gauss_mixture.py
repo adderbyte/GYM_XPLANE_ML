@@ -1,17 +1,3 @@
-
-
-
-
-
-
-# Copyright (c) 2017, Kyle Lo
-# All rights reserved.
-#
-# This source code is licensed under the BSD-style license found in the
-# LICENSE file in the root directory of this source tree.
-
-
-
 import numpy as np
 
 
@@ -57,30 +43,7 @@ def sarray(x, num_chars=10):
 
 import numpy as np
 import tensorflow as tf
-#from util.sprint import sfill, sfloat, sarray
 
-# NUM_COMPONENTS = 2
-# TRUE_PROBS = np.array([0.6, 0.4])
-# TRUE_MU = np.array([-1.5, 1.5])
-# TRUE_SIGMA = np.array([1.50, 0.50])
-# SAMPLE_SIZE = 10000
-
-NUM_COMPONENTS = 3
-# TRUE_PROBS = np.array([0.5, 0.3, 0.2])
-# TRUE_MU = np.array([-1.5, 0.0, 1.0])
-# TRUE_SIGMA = np.array([0.5, 0.4, 0.3])
-# SAMPLE_SIZE = 141 #10000
-
-# if TRUE_PROBS.sum() != 1.0:
-#     raise Exception('Component weights should sum to 1.0')
-
-INIT_LOGIT_PARAMS = {'mean': 0.0, 'stddev': 0.1}
-INIT_MU_PARAMS = {'mean': 0.0, 'stddev': 0.1}
-INIT_PHI_PARAMS = {'mean': 1.0, 'stddev': 0.1}
-LEARNING_RATE = 0.001
-MAX_ITER = 141 #10000
-TOL_PARAM, TOL_LOSS, TOL_GRAD = 1e-8, 1e-8, 1e-8
-RANDOM_SEED = 0
 
 MAX_CHARS = 15
 
