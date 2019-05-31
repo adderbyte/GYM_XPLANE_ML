@@ -47,7 +47,7 @@ client.getPOSI() # get the lat, long,altitude, pitch, roll, heading, gear
 
 ```
 
-A typical state parameter is shown below: 
+A typical state space  parameter configuration is shown below: 
 
 | State Space Parameter | State type | State Value Range |
 | --- | --- |---|
