@@ -1,70 +1,18 @@
-import numpy as np
-
-
-# def sfill(x, max_chars=10, justify='>'):
-#     """Fill a string with empty characters"""
-#     return '{}' \
-#         .format('{:' + justify + str(max_chars) + '}') \
-#         .format(x)
-
-
-# def sfloat(x, num_chars=10):
-#     """Stringify a float to have exactly some number of characters"""
-#     x = float(x)
-#     num_chars = int(num_chars)
-#     start, end = str(x).split('.')
-#     start_chars = len(str(float(start)))
-#     if start_chars > num_chars:
-#         raise Exception('Try num_chars = {}'.format(start_chars))
-#     return '{}' \
-#         .format('{:' + str(num_chars) + '.' +
-#                 str(num_chars - start_chars + 1) + 'f}') \
-#         .format(x)
-
-
-# def shess(hess, num_chars=10):
-#     """Stringify an n x n Hessian matrix"""
-#     n = hess.shape[0]
-#     s = 'Hessian:' + ('\n' + '| {} ' * n + '|') * n
-#     return s.format(*[sfloat(h, num_chars)
-#                       for h in np.array(hess).reshape(-1)])
-
-
-# def sarray(x, num_chars=10):
-#     n = len(x)
-#     return '({})'.format(', '.join([sfloat(xi, num_chars / n) for xi in x]))
 
 
 
 
 
 
+# adapted from  https://github.com/kyleclo/tensorflow-mle ,  Copyright (c) 2017, Kyle Lo
 
 
 import numpy as np
+import scipy.stats as sp
+#from util.dist import get_mu, get_sigma
+import matplotlib.pyplot as plt
 import tensorflow as tf
 
-
-MAX_CHARS = 15
-
-# generate sample
-# np.random.seed(0)
-# z_obs = np.random.choice(range(NUM_COMPONENTS),
-#                          size=SAMPLE_SIZE,
-#                          p=TRUE_PROBS)
-# self.train = np.random.normal(loc=TRUE_MU[z_obs],
-#                          scale=TRUE_SIGMA[z_obs],
-#                          size=SAMPLE_SIZE)
-
-# plot
-# import matplotlib.pyplot as plt
-# plt.hist([x_obs[z_obs == i] for i in range(NUM_COMPONENTS)],
-#          bins=100, stacked=True, alpha=0.5, normed=True,
-#          label=['component {}'.format(i + 1) for i in range(NUM_COMPONENTS)])
-# plt.legend(loc='upper left')
-# plt.show()
-
-# center and scale the data
 
 json1_file = open('keepHeading.json')
 json1_str = json1_file.read()
@@ -145,17 +93,18 @@ class GaussMixture:
           
           
 
-      def __train__(data,sess,plot=False): 
+      def __train__(self,data,sess): 
 
           #### Normalize training data ##############################
+          self.train = True
           self.train_data = data
-          self.train_mean = self.train_data.mean()
-          self.train_std = self.train_data.std() + 0.000000000001
-          self.train_data = (self.train_data - self.train_mean) / self.train_std
+          train_mean = self.train_data.mean()
+          train_std = self.train_data.std() + 0.000000000001
+          self.train_data = (train_data - train_mean) / self.train_std
           ##################################
 
           # tensor for data
-          output_prob,output_mean, output_log = [],[],[]
+          
           episode_count= 1
           with episode_count <=  self.train_episode :
               #sess.run(fetches=tf.global_variables_initializer())
@@ -163,7 +112,7 @@ class GaussMixture:
               i = 1
               obs_logit, self.obs_p, self.obs_mu, obs_phi, self.obs_sigma = sess.run(
                   fetches=[[self.logit], [self.p], [self.mu], [self.phi], [self.sigma]])
-              obs_loss = sess.run(fetches=[self.neg_log_likelihood], feed_dict={x: self.train_data})
+              self.obs_loss = sess.run(fetches=[self.neg_log_likelihood], feed_dict={x: self.train_data})
               obs_grad = sess.run(fetches=[self.grad], feed_dict={x: self.train_data})
               # if TRAIN :
               #     print(' {} | {} | {} | {} | {} | {}'
@@ -191,18 +140,17 @@ class GaussMixture:
 
                   # update loss
                   new_loss = sess.run(fetches=self.neg_log_likelihood, feed_dict={x: self.train_data})
-                  loss_diff = np.abs(new_loss - obs_loss[-1])
+                  loss_diff = np.abs(new_loss - self.obs_loss[-1])
 
                   # update gradient
                   new_grad = sess.run(fetches=grad, feed_dict={x: self.train_data})
                   grad_norm = np.linalg.norm(new_grad)
 
-                  obs_logit.append(new_logit)
                   self.obs_p.append(new_p)
                   self.obs_mu.append(new_mu)
                   self.obs_phi.append(new_phi)
                   self.obs_sigma.append(new_sigma)
-                  obs_loss.append(new_loss)
+                  self.obs_loss.append(new_loss)
                   obs_grad.append(new_grad)
 
                   # if (i - 1) % 100 == 0:
@@ -213,6 +161,7 @@ class GaussMixture:
                   #                   sarray(new_sigma, MAX_CHARS),
                   #                   sfloat(new_loss, MAX_CHARS),
                   #                   sfloat(grad_norm, MAX_CHARS)))
+                  obs_logit.append(new_logit)
 
                   if diff_norm < self.TOL_PARAM:
                       print('Parameter convergence in {} iterations!'.format(i))
@@ -235,22 +184,73 @@ class GaussMixture:
 
           ############################# print results ##################################
 
-            # print('Fitted MLE:')
-            # for j in range(self.NUM_COMPONENTS):
-            #     print('Component {}: [p={:.4f}, mu={:.4f}, sigma={:.4f}]'
-            #           .format(j + 1, obs_p[-1][j],
-            #                   SCALE * obs_mu[-1][j] + self.train_mean,
-            #                   SCALE * obs_sigma[-1][j]))
-            return  self.obs_mu, self.obs_mu, self.obs_sigma
+            print('Fitted MLE:')
+            for j in range(self.NUM_COMPONENTS):
+                print('Component {}: [p={:.4f}, mu={:.4f}, sigma={:.4f}]'
+                      .format(j + 1, obs_p[-1][j],
+                              SCALE * obs_mu[-1][j] + self.train_mean,
+                              SCALE * obs_sigma[-1][j]))
+            return  self.obs_mu, self.obs_mu, self.obs
            ############################################################################
           # print('True Values:')
           # for j in range(NUM_COMPONENTS):
           #     print('Component {}: [p={:.4f}, mu={:.4f}, sigma={:.4f}]'
           #           .format(j + 1, TRUE_PROBS[j], TRUE_MU[j], TRUE_SIGMA[j]))
 
-          # obs_m = [i[2] for i in obs_mu]
-          # obs_s = [i[2] for i in obs_sigma]
+          obs_m = [i[2] for i in obs_mu]
+          obs_s = [i[2] for i in obs_sigma]
               
           # plot_canonical_gauss(self.train_data, obs_m, obs_s, obs_loss,
           #                      title='canonical params, adam, alpha = {}'
           #                      .format(LEARNING_RATE))
+    @property
+    def trainer(self,data,sess):
+
+      return self.__train__(data,sess)
+
+    @staticmethod
+    def __plot_canonical_gauss__(x, obs_mu, obs_sigma, obs_loss,
+                         title, epsilon=0.05, breaks=100):
+          # compute grid
+          mu_grid = np.linspace(start=min(obs_mu) - epsilon,
+                                stop=max(obs_mu) + epsilon,
+                                num=breaks)
+          sigma_grid = np.linspace(start=max(min(obs_sigma) - epsilon, 0.0),
+                                   stop=max(obs_sigma) + epsilon,
+                                   num=breaks)
+          mu_grid, sigma_grid = np.meshgrid(mu_grid, sigma_grid)
+          loss_grid = -np.sum(
+              [sp.norm(loc=mu_grid, scale=sigma_grid).logpdf(x=xi) for xi in x],
+              axis=0)
+
+          # plot contours and loss
+          fig, ax = plt.subplots(nrows=1, ncols=2)
+          ax[0].contour(mu_grid, sigma_grid, loss_grid,
+                        levels=np.linspace(np.min(loss_grid),
+                                           np.max(loss_grid),
+                                           breaks),
+                        cmap='terrain')
+          ax[0].plot(obs_mu, obs_sigma, color='red', alpha=0.5,
+                     linestyle='dashed', linewidth=1, marker='.', markersize=3)
+          ax[0].set_xlabel('mu')
+          ax[0].set_ylabel('sigma')
+          ax[1].plot(range(len(obs_loss)), obs_loss)
+          ax[1].set_xlabel('iter')
+          # ax[1].set_ylabel('loss')
+          plt.suptitle('{}'.format(title))
+          left  = 0.125  # the left side of the subplots of the figure
+          right = 2.    # the right side of the subplots of the figure
+          bottom = 0.1   # the bottom of the subplots of the figure
+          top = 0.9      # the top of the subplots of the figure
+          wspace = 0.5   # the amount of width reserved for blank space between subplots
+          hspace = 0.5   # the amount of height reserved for white space between subplots
+          plt.subplots_adjust(left, bottom, right, top, wspace, hspace)
+          plt.show()
+
+  def plot(self):
+    assert self.train == True 
+    for j in self.NUM_COMPONENTS:
+        obs_m = [i[j] for i in obs_mu]
+        obs_s = [i[j] for i in obs_sigma]
+        __plot_canonical_gauss__.(self.x,obs_m,self.obs_s,self.obs_loss)
+
