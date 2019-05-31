@@ -248,9 +248,9 @@ class GaussMixture:
           #     print('Component {}: [p={:.4f}, mu={:.4f}, sigma={:.4f}]'
           #           .format(j + 1, TRUE_PROBS[j], TRUE_MU[j], TRUE_SIGMA[j]))
 
-          obs_m = [i[2] for i in obs_mu]
-          obs_s = [i[2] for i in obs_sigma]
+          # obs_m = [i[2] for i in obs_mu]
+          # obs_s = [i[2] for i in obs_sigma]
               
-          plot_canonical_gauss(self.train_data, obs_m, obs_s, obs_loss,
-                               title='canonical params, adam, alpha = {}'
-                               .format(LEARNING_RATE))
+          # plot_canonical_gauss(self.train_data, obs_m, obs_s, obs_loss,
+          #                      title='canonical params, adam, alpha = {}'
+          #                      .format(LEARNING_RATE))
