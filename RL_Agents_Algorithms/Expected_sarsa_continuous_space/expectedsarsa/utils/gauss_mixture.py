@@ -4,15 +4,102 @@
 
 
 
-# adapted from  https://github.com/kyleclo/tensorflow-mle ,  Copyright (c) 2017, Kyle Lo
+# adapted from  https://github.com/kyleclo/tensorflow-mle # Copyright (c) 2017, Kyle Lo
 
 
 import numpy as np
 import scipy.stats as sp
 #from util.dist import get_mu, get_sigma
 import matplotlib.pyplot as plt
-import tensorflow as tf
 
+
+def sfill(x, max_chars=10, justify='>'):
+    """Fill a string with empty characters"""
+    return '{}' \
+        .format('{:' + justify + str(max_chars) + '}') \
+        .format(x)
+
+
+def sfloat(x, num_chars=10):
+    """Stringify a float to have exactly some number of characters"""
+    x = float(x)
+    num_chars = int(num_chars)
+    start, end = str(x).split('.')
+    start_chars = len(str(float(start)))
+    if start_chars > num_chars:
+        raise Exception('Try num_chars = {}'.format(start_chars))
+    return '{}' \
+        .format('{:' + str(num_chars) + '.' +
+                str(num_chars - start_chars + 1) + 'f}') \
+        .format(x)
+
+
+def shess(hess, num_chars=10):
+    """Stringify an n x n Hessian matrix"""
+    n = hess.shape[0]
+    s = 'Hessian:' + ('\n' + '| {} ' * n + '|') * n
+    return s.format(*[sfloat(h, num_chars)
+                      for h in np.array(hess).reshape(-1)])
+
+
+def sarray(x, num_chars=10):
+    n = len(x)
+    return '({})'.format(', '.join([sfloat(xi, num_chars / n) for xi in x]))
+
+
+
+
+
+
+
+
+import numpy as np
+import tensorflow as tf
+#from util.sprint import sfill, sfloat, sarray
+
+# NUM_COMPONENTS = 2
+# TRUE_PROBS = np.array([0.6, 0.4])
+# TRUE_MU = np.array([-1.5, 1.5])
+# TRUE_SIGMA = np.array([1.50, 0.50])
+# SAMPLE_SIZE = 10000
+
+NUM_COMPONENTS = 3
+# TRUE_PROBS = np.array([0.5, 0.3, 0.2])
+# TRUE_MU = np.array([-1.5, 0.0, 1.0])
+# TRUE_SIGMA = np.array([0.5, 0.4, 0.3])
+# SAMPLE_SIZE = 141 #10000
+
+# if TRUE_PROBS.sum() != 1.0:
+#     raise Exception('Component weights should sum to 1.0')
+
+INIT_LOGIT_PARAMS = {'mean': 0.0, 'stddev': 0.1}
+INIT_MU_PARAMS = {'mean': 0.0, 'stddev': 0.1}
+INIT_PHI_PARAMS = {'mean': 1.0, 'stddev': 0.1}
+LEARNING_RATE = 0.001
+MAX_ITER = 141 #10000
+TOL_PARAM, TOL_LOSS, TOL_GRAD = 1e-8, 1e-8, 1e-8
+RANDOM_SEED = 0
+
+MAX_CHARS = 15
+
+# generate sample
+# np.random.seed(0)
+# z_obs = np.random.choice(range(NUM_COMPONENTS),
+#                          size=SAMPLE_SIZE,
+#                          p=TRUE_PROBS)
+# self.train = np.random.normal(loc=TRUE_MU[z_obs],
+#                          scale=TRUE_SIGMA[z_obs],
+#                          size=SAMPLE_SIZE)
+
+# plot
+# import matplotlib.pyplot as plt
+# plt.hist([x_obs[z_obs == i] for i in range(NUM_COMPONENTS)],
+#          bins=100, stacked=True, alpha=0.5, normed=True,
+#          label=['component {}'.format(i + 1) for i in range(NUM_COMPONENTS)])
+# plt.legend(loc='upper left')
+# plt.show()
+
+# center and scale the data
 
 json1_file = open('keepHeading.json')
 json1_str = json1_file.read()
@@ -40,19 +127,19 @@ class GaussMixture:
               # initialise logit parameters: from a distribution with mean 0.0. and standard deviation of 0.1
               self.logit = tf.Variable(initial_value=tf.random_normal(shape=[NUM_COMPONENTS],
                                                                  seed=RANDOM_SEED,
-                                                                 **INIT_LOGIT_PARAMS),
+                                                                 **LOGIT_PARAMS),
                                   dtype=tf.float32)
 
               self.p = tf.nn.softmax(logits=logit)
               #initialise mean parameters: from a distribution with mean 0.0. and standard deviation of 0.1
               self.mu = tf.Variable(initial_value=tf.random_normal(shape=[NUM_COMPONENTS],
                                                               seed=RANDOM_SEED,
-                                                              **INIT_MU_PARAMS),
+                                                              **MU_PARAMS),
                                dtype=tf.float32)
               # initialise phi parameters: from a distribution with mean 0.0. and standard deviation of 0.1
               self.phi = tf.Variable(initial_value=tf.random_normal(shape=[NUM_COMPONENTS],
                                                                seed=RANDOM_SEED,
-                                                               **INIT_PHI_PARAMS),
+                                                               **PHI_PARAMS),
                                 dtype=tf.float32)
               self.sigma = tf.square(phi)
          #######################################################################################
@@ -200,9 +287,9 @@ class GaussMixture:
           obs_m = [i[2] for i in obs_mu]
           obs_s = [i[2] for i in obs_sigma]
               
-          # plot_canonical_gauss(self.train_data, obs_m, obs_s, obs_loss,
-          #                      title='canonical params, adam, alpha = {}'
-          #                      .format(LEARNING_RATE))
+          plot_canonical_gauss(self.train_data, obs_m, obs_s, obs_loss,
+                               title='canonical params, adam, alpha = {}'
+                               .format(LEARNING_RATE))
     @property
     def trainer(self,data,sess):
 
