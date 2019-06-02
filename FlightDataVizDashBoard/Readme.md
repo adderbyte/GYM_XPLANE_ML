@@ -2,7 +2,7 @@
 ###### Visualisation DashBoard for simulation Parameters
 ---------------------------------------
 
-AIM: Provide real time visualisation dashboard for flight parameters.
+AIM : Provide real time visualisation dashboard for flight parameters.
 
 
 
@@ -20,3 +20,6 @@ parameters collected in real time during training or testing. Particularly usefu
 ---------------------------------------
 ######  Requirements
 --------------------------------------- 
+* Flask
+* Dashplot
+* CesiumJS
