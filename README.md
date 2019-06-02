@@ -88,6 +88,7 @@ The range of each parameter value would also depend on the configuration.
  - [ ] Use XVFB for fake display.
  - [ ] Docker support 
  - [ ] Algorithm implementations (high priority)
+ - [ ] Real Time flight and data visualization interface.
 
 
 
