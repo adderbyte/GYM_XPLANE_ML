@@ -20,6 +20,6 @@ parameters collected in real time during training or testing. Particularly usefu
 ---------------------------------------
 ######  Requirements
 --------------------------------------- 
-* [Flask](hhttp://flask.pocoo.org/)
+* [Flask](http://flask.pocoo.org/)
 * [Dash](https://dash.plot.ly/)
 * [CesiumJS](https://cesiumjs.org/)
