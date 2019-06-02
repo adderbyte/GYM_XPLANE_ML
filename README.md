@@ -85,8 +85,8 @@ The range of each parameter value would also depend on the configuration.
 ------------------
 ##### TO DO  
 -------------------
- - [ ] Use XVFB for fake display.
- - [ ] Docker support 
+ - [x] Use XVFB for fake display.
+ - [x] Docker support (under test)
  - [ ] Algorithm implementations (high priority)
  - [ ] Real Time flight and data visualization interface.
 
