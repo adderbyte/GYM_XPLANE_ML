@@ -10,11 +10,11 @@ AIM : Provide real time visualisation dashboard for flight parameters.
 parameters collected in real time during training or testing. Particularly useful when running gym-xplane in headless mode. `
 
 ---------------------------------------
-######  Use Case
+######  Use Case scenario
 --------------------------------------- 
 
-* When running training XPlane in Headless mode
-* Visualisation of Flight Parameters in real time without affecting the training time 
+* Monitor parameters when running training XPlane in Headless mode
+* Visualisation of important Flight Parameters.
 
 
 ---------------------------------------
