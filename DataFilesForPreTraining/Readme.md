@@ -18,4 +18,4 @@ ________________________________________________________________________________
 ###### TO-DO
 ___________________________________________________________________________________
 
-- [ ] update this part of the project. Change to be compatible with python3 and the gym Xplane Environment
+- [x] update this part of the project. Change to be compatible with python3 and the gym Xplane Environment
