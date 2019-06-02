@@ -85,9 +85,9 @@ The range of each parameter value would also depend on the configuration.
 ------------------
 ##### TO DO  
 -------------------
- * Use XVFB for fake display.
- * Docker support 
- * Algorithm implementations (high priority)
+ - [ ] Use XVFB for fake display.
+ - [ ] Docker support 
+ - [ ] Algorithm implementations (high priority)
 
 
 
