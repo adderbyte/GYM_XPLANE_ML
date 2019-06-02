@@ -20,6 +20,6 @@ parameters collected in real time during training or testing. Particularly usefu
 ---------------------------------------
 ######  Requirements
 --------------------------------------- 
-* Flask
-* Dashplot
-* CesiumJS
+* Flask [Flask](hhttp://flask.pocoo.org/)
+* Dashplot [Dash](https://dash.plot.ly/)
+* CesiumJS  [CesiumJS](https://cesiumjs.org/)
