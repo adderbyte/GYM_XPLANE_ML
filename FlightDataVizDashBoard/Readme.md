@@ -7,7 +7,7 @@ AIM : Provide real time visualisation dashboard for flight parameters.
 
 
 `This  is not a repalcement for the excellent Xplane graphics flight display. It is meant to aid visualisation of important 
-parameters collected in real time during training or testing. Particularly useful when running gym-xplane in headless mode. `
+parameters collected in real time during training or testing. Particularly useful when running gym-xplane in headless mode or testing. `
 
 ---------------------------------------
 ######  Use Case scenario
