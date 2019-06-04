@@ -59,6 +59,30 @@ The range of each parameter value would also depend on the configuration.
 
 `client` (UDP connector) already has a function `getPOSI` that helps read the `latitude, longitude, altitude, pitch, roll, heading`. Other parameters could be added by using the client `getDREF` function. Note that the string `"sim/flightmodel/position/P"` is gotten from the Xplane Dataref referenced earlier ([XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php))
 
+------------------
+### Flight Dash Boards
+-------------------
+`The state space parameters are well documented in` [XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php) . The number of state space parameters will  depend on the task. It is possible to use a derived state parameter. Usually a UDP connection ([XPlaneConnect](https://github.com/nasa/XPlaneConnect)) is required to read this parameter from XPlane. 
+An example of how to read parameter from UDP connection is shown below:
+
+```
+client = xpc.XPlaneConnect() # UDP connector
+client.getDREF("sim/flightmodel/position/P")[0][0] # moment P
+client.getPOSI() # get the lat, long,altitude, pitch, roll, heading, gear
+
+```
+
+A typical state space  parameter configuration is shown below: 
+
+| State Space Parameter | State type | State Value Range |
+| --- | --- |---|
+| velocity_x | [Box](http://gym.openai.com/docs/#spaces) |  [0,120] |
+| velocity_y  | [Box](http://gym.openai.com/docs/#spaces) | [0,120] |
+| delta_heading | [Box](http://gym.openai.com/docs/#spaces) | [-300,300]|
+
+The range of each parameter value would also depend on the configuration.
+
+`client` (UDP connector) already has a function `getPOSI` that helps read the `latitude, longitude, altitude, pitch, roll, heading`. Other parameters could be added by using the client `getDREF` function. Note that the string `"sim/flightmodel/position/P"` is gotten from the Xplane Dataref referenced earlier ([XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php))
 
 
 -------------------
