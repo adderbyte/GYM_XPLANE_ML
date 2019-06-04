@@ -68,7 +68,7 @@ An example of how to read parameter from UDP connection is shown below:
 <img src="https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/images/gymXplaneDashboard.png" alt="drwing" height="250" width="250"/>
 <img src="https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/images/flightparam.png" alt="drwing" height="250" width="250"/>
 
-![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/images/flightparam.png)
+![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/images/gymXplaneDashboard.png)
 
 A typical state space  parameter configuration is shown below: 
 
