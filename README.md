@@ -65,12 +65,8 @@ The range of each parameter value would also depend on the configuration.
 `The state space parameters are well documented in` [XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php) . The number of state space parameters will  depend on the task. It is possible to use a derived state parameter. Usually a UDP connection ([XPlaneConnect](https://github.com/nasa/XPlaneConnect)) is required to read this parameter from XPlane. 
 An example of how to read parameter from UDP connection is shown below:
 
-```
-client = xpc.XPlaneConnect() # UDP connector
-client.getDREF("sim/flightmodel/position/P")[0][0] # moment P
-client.getPOSI() # get the lat, long,altitude, pitch, roll, heading, gear
+<img src="https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/images/gymXplaneDashboard.png" alt="drwing" width="200"/>
 
-```
 
 A typical state space  parameter configuration is shown below: 
 
