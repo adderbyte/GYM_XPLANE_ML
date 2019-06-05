@@ -13,7 +13,7 @@ parameters collected in real time during training or testing. Particularly usefu
 ######  Use Case scenario
 --------------------------------------- 
 
-* Monitor parameters when running training XPlane in Headless mode
+* Monitor parameters when running training model in Headless mode
 * Visualisation of important Flight Parameters.
 
 
