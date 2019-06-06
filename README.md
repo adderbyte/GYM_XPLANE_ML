@@ -60,7 +60,7 @@ The range of each parameter value would also depend on the configuration.
 `client` (UDP connector) already has a function `getPOSI` that helps read the `latitude, longitude, altitude, pitch, roll, heading`. Other parameters could be added by using the client `getDREF` function. Note that the string `"sim/flightmodel/position/P"` is gotten from the Xplane Dataref referenced earlier ([XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php))
 
 ------------------
-### Flight Dash Boards
+### Flight Dashboard
 -------------------
 To learn more about this go to :  [FlightDataVizDashBoard](https://github.com/adderbyte/GYM_XPLANE_ML/tree/master/FlightDataVizDashBoard)
 ![alt-text](https://github.com/adderbyte/GYM_XPLANE_ML/blob/master/images/gymXplaneDashboard.png)
