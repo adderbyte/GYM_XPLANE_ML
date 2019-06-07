@@ -23,3 +23,6 @@ parameters collected in real time during training or testing. Particularly usefu
 * [Flask](http://flask.pocoo.org/)
 * [Dash](https://dash.plot.ly/)
 * [CesiumJS](https://cesiumjs.org/)
+* [WebGL Earth](http://examples.webglearth.com/)
+* [D3JS](https://github.com/d3/d3/wiki/Gallery)
+
