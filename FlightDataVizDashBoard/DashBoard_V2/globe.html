@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+ 
+  <script src="https://cesiumjs.org/releases/1.57/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesiumjs.org/releases/1.57/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <style>
+      
+      #cesiumContainer {
+      width: 340px;
+      height: 360px;
+      position: fixed; 
+      bottom:2%;
+      right : 10px;
+      overflow: hidden;
+      }
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  
+  <script>
+    Cesium.Ion.defaultAccessToken = '';
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+    terrainProvider: Cesium.createWorldTerrain()
+    });
+  </script>
+  
+</body>
+</html>
