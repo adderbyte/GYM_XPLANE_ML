@@ -26,9 +26,9 @@ parameters collected in real time during training or testing. Particularly usefu
 * [WebGL Earth](http://examples.webglearth.com/)
 * [D3JS](https://github.com/d3/d3/wiki/Gallery)
 
----------------------------------------
-######  Note
---------------------------------------- 
-* Register on Cesium to get a token to be used in HTML file
+
+
+`Register on cesium to get a token. Use the token in the html file as the defaultAccessToken`
+
 
 
