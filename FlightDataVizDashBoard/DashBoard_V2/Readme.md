@@ -9,4 +9,4 @@
 
 
 
-`Register on cesium to get a token. Use the token in the html file in `
+`Register on cesium to get a token. Use the token in the html file as the defaultAccessToken`
