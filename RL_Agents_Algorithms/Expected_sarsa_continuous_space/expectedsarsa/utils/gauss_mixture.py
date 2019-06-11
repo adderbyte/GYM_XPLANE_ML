@@ -11,57 +11,8 @@ import numpy as np
 import scipy.stats as sp
 #from util.dist import get_mu, get_sigma
 import matplotlib.pyplot as plt
-
-
-def sfill(x, max_chars=10, justify='>'):
-    """Fill a string with empty characters"""
-    return '{}' \
-        .format('{:' + justify + str(max_chars) + '}') \
-        .format(x)
-
-
-def sfloat(x, num_chars=10):
-    """Stringify a float to have exactly some number of characters"""
-    x = float(x)
-    num_chars = int(num_chars)
-    start, end = str(x).split('.')
-    start_chars = len(str(float(start)))
-    if start_chars > num_chars:
-        raise Exception('Try num_chars = {}'.format(start_chars))
-    return '{}' \
-        .format('{:' + str(num_chars) + '.' +
-                str(num_chars - start_chars + 1) + 'f}') \
-        .format(x)
-
-
-def shess(hess, num_chars=10):
-    """Stringify an n x n Hessian matrix"""
-    n = hess.shape[0]
-    s = 'Hessian:' + ('\n' + '| {} ' * n + '|') * n
-    return s.format(*[sfloat(h, num_chars)
-                      for h in np.array(hess).reshape(-1)])
-
-
-def sarray(x, num_chars=10):
-    n = len(x)
-    return '({})'.format(', '.join([sfloat(xi, num_chars / n) for xi in x]))
-
-
-
-
-
-
-
-
-import numpy as np
 import tensorflow as tf
-#from util.sprint import sfill, sfloat, sarray
 
-# NUM_COMPONENTS = 2
-# TRUE_PROBS = np.array([0.6, 0.4])
-# TRUE_MU = np.array([-1.5, 1.5])
-# TRUE_SIGMA = np.array([1.50, 0.50])
-# SAMPLE_SIZE = 10000
 
 NUM_COMPONENTS = 3
 # TRUE_PROBS = np.array([0.5, 0.3, 0.2])
