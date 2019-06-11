@@ -28,7 +28,7 @@ parameters collected in real time during training or testing. Particularly usefu
 
 
 
-`Register on cesium to get a token. Use the token in the html file as the defaultAccessToken`
+`Register on cesium.org to get a token. Use the token in the html file as the defaultAccessToken`
 
 
 
