@@ -14,4 +14,4 @@
 
 
 
-`Register on cesium to get a token. Use the token in the html file as the defaultAccessToken`
+`Register on cesium.org to get a token for access to cesium earth. Use the token in the html file as the defaultAccessToken`
