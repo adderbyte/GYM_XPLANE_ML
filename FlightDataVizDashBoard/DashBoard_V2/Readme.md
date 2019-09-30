@@ -8,4 +8,8 @@
 
 
 
-`Register on cesium to get a token. Use the token in the html file as the defaultAccessToken`
+`Register on cesium to get a token.`
+
+Paste the  value in this line of the html:
+
+`Cesium.Ion.defaultAccessToken = 'paste your token here after registering on the cesium webpage';`
