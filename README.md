@@ -98,6 +98,7 @@ To learn more about this go to :  [FlightDataVizDashBoard](https://github.com/ad
  - [x] Docker support (under test)
  - [ ] Algorithm implementations (high priority)
  - [ ] Real Time flight and data visualization interface.
+ - [ ] Investigate Federated Learning
 
 
 
