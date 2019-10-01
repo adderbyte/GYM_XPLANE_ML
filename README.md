@@ -5,6 +5,9 @@ This project documents set up of Reinforcement learning environment for flight c
 
 `Update: Use the leaderboard wiki Page--> `([Leaderboard](https://github.com/adderbyte/GYM_XPLANE_ML/wiki/Leaderboard)) ` to add details of your own scenario or ( reinforcement learning ) algorithm.`
 
+`To install  the module go thorugh the read me file in ` 
+[Gym-Xplane-final version](https://github.com/adderbyte/GYM_XPLANE_ML/tree/master/gym_xplane_final_version)
+
 ------------------
 ### Agent-Environment Interaction Flow
 -------------------
