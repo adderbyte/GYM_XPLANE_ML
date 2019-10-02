@@ -40,8 +40,9 @@ The possible action parameters are given below. The choice of parameters would d
 ------------------
 ### State Space Parameters
 -------------------
-`The state space parameters are well documented in` [XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php) . The number of state space parameters will  depend on the task. It is possible to use a derived state parameter. Usually a UDP connection ([XPlaneConnect](https://github.com/nasa/XPlaneConnect)) is required to read this parameter from XPlane. 
-An example of how to read parameter from UDP connection is shown below:
+`The state space parameters are well documented in` [XPlane Data Ref](https://www.siminnovations.com/xplane/dataref/index.php). The number and configuration  of state space parameters would also  depend on the task. It is possible to use a derived state spade parameters. 
+
+Note that, usually a UDP connection ([XPlaneConnect](https://github.com/nasa/XPlaneConnect)) is required to read any parameter parameter from XPlane. An example of how to read parameter from UDP connection is shown below:
 
 ```
 client = xpc.XPlaneConnect() # UDP connector
