@@ -7,7 +7,7 @@ This project documents set up of Reinforcement learning environment for flight c
 
 ---------------------------------------------
  
-      GYM XPLANE ENVIRONMENT
+      GYM XPLANE ENVIRONMENT INSTALLATION
 -------------------------------------------------
 
 `To install  the gym x-palne environment go through the read me file of the folder ` :
