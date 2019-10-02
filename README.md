@@ -6,15 +6,17 @@ This project documents set up of Reinforcement learning environment for flight c
 `Update: Use the leaderboard wiki Page--> `([Leaderboard](https://github.com/adderbyte/GYM_XPLANE_ML/wiki/Leaderboard)) ` to add details of your own scenario or ( reinforcement learning ) algorithm.`
 
 ---------------------------------------------
-##### GYM XPLANE ENVIRONMENT
+ 
+      GYM XPLANE ENVIRONMENT
 -------------------------------------------------
 
 `To install  the gym x-palne environment go through the read me file of the folder ` :
 [Gym-Xplane-final version](https://github.com/adderbyte/GYM_XPLANE_ML/tree/master/gym_xplane_final_version)
 This is the latest version of the actual gym-xplane environment. 
 
-The other folders contain  additional modules for additional functionalities. The names of the folders would give
+The other folders contain  additional modules for additional functionalities. The names of such folders would give
 an idea as to what each of such modules does.
+
 Read the Wiki to get a general idea of the environment and training procedure ([Gym-Xplane Wiki](https://github.com/adderbyte/GYM_XPLANE_ML/wiki/Leaderboard)).
 
 ------------------
