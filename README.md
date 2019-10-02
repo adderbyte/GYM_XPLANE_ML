@@ -19,6 +19,29 @@ an idea as to what each of such modules does.
 
 Read the Wiki to get a general idea of the environment and training procedure ([Gym-Xplane Wiki](https://github.com/adderbyte/GYM_XPLANE_ML/wiki/Leaderboard)).
 
+-------------------
+       
+    Requirements
+--------------------
+* X Plane (Demo version) (main requirement)
+  * [XPLane](https://www.x-plane.com/)
+* XPlaneConnect (replace this with  different python udp connection file if required)
+  * [XPlaneConnect](https://github.com/nasa/XPlaneConnect) [https://github.com/nasa/XPlaneConnect]
+* RL Algorithm (define  your own RL algorithm or use standard baslines. )
+  *  [Tensorforce](https://github.com/reinforceio/tensorforce) 
+  *  [RLLIB](https://ray.readthedocs.io/en/latest/rllib.html)
+  *  [OpenAI Baselines](https://github.com/openai/baselines)
+* Lua Programming/[FlyWithLua](https://www.x-plained.com/flywithlua-for-x-plane-11/) (for seamless interaction with XPlane)
+
+
+------------------
+
+    General setup
+-------------------
+ * GYM XPLANE ENVIRONMENT
+ * MULTI AGENT ENVIRONMENT SET UP (Work in progress)
+
+
 ------------------
 ### Agent-Environment Interaction Flow
 -------------------
