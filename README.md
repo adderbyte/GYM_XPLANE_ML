@@ -9,11 +9,12 @@ This project documents set up of Reinforcement learning environment for flight c
 ##### GYM XPLANE ENVIRONMENT
 -------------------------------------------------
 
-`To install  the gym x-palne environment go through the read me file of the folder below ` 
+`To install  the gym x-palne environment go through the read me file of the folder ` :
 [Gym-Xplane-final version](https://github.com/adderbyte/GYM_XPLANE_ML/tree/master/gym_xplane_final_version)
-This is the latest version of the actual gym environment. 
+This is the latest version of the actual gym-xplane environment. 
 
-The other folders contain  contain additional modules that might be needed for efficient training. 
+The other folders contain  additional modules for additional functionalities.
+Read the Wiki to get a general idea of the environment and training procedure ([Gym-Xplane Wiki](https://github.com/adderbyte/GYM_XPLANE_ML/wiki/Leaderboard))
 
 ------------------
 ### Agent-Environment Interaction Flow
