@@ -25,7 +25,7 @@ This project documents set up of Reinforcement learning environment for flight c
 ------------------
 ### Action Space Parameters
 -------------------
-` The action space parameters. Select from the list the appropriate parameters for any task or scenario .` For example one might decide that the first 4 parameters are important for a defined task.
+The possible action parameters are given below. The choice of parameters would depend on the task. For example one might decide that the last three parameters are not important for the keep heading task ([Leaderboard](https://github.com/adderbyte/GYM_XPLANE_ML/wiki/Leaderboard) .
 
 | Action Space Parameter | Action type | Action Value Range |
 | --- | --- |---|
