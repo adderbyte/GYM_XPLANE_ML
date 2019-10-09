@@ -111,7 +111,7 @@ To learn more about this go to :  [FlightDataVizDashBoard](https://github.com/ad
  - [x] Docker support (under test)
  - [ ] Algorithm implementations (high priority)
  - [ ] Real Time flight and data visualization interface.
- - [x] Investigate Federated Learning
+ - [x] Investigate Federated Learning and Thompson Sampling
 
 
 
