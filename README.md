@@ -109,7 +109,7 @@ To learn more about this go to :  [FlightDataVizDashBoard](https://github.com/ad
 -------------------
  - [x] Use XVFB for fake display.
  - [x] Docker support (under test)
- - [ ] Algorithm implementations (high priority)
+ - [ ] Algorithm implementations (high priority) / GPU support to be included
  - [ ] Real Time flight and data visualization interface.
  - [x] Investigate Federated Learning / Thompson Sampling / policy-space response oracles (psro)
 
