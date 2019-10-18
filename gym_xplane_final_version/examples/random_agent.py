@@ -1,7 +1,7 @@
 import argparse
 
 import gym_xplane
-import p3xpc 
+#import p3xpc 
 import gym
 
 
