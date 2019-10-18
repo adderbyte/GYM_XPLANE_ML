@@ -224,22 +224,6 @@ def actor_critic(num_episodes,learning_rate_critic,learning_rate_actor,entropy_s
 		#filewriter.add_summary(reward_summary,e)
 
 	return scores
-"""
-t = 0
-print("Starting Test")
-while True:
-	lr_critic = np.random.choice(np.logspace(-4, -1, 20))
-	lr_actor = np.random.choice(np.logspace(-4, -1, 20))
-	ent = np.random.choice(np.logspace(-5, -1, 20))
-	s = actor_critic(num_episodes=10,learning_rate_critic=lr_critic,learning_rate_actor=lr_actor,entropy_scalar=ent)
-	print("Test Number " + str(t) + " | Critic Learning Rate: " + str(lr_critic) + " | Actor Learning Rate " + str(lr_actor) + " | Entropy: " + str(ent) + " | Scores: " + str(np.sum(s)/5))
-	t += 1
-"""
-
-# These params are good sometimes but blow up
-# s = actor_critic(num_episodes=30,learning_rate_critic=0.03359818286283781,learning_rate_actor=0.011288378916846883,entropy_scalar=1.623776739188721e-05)
-
-#s = actor_critic(num_episodes=30,learning_rate_critic=0.0006158482110660267,learning_rate_actor=0.023357214690901212,entropy_scalar=0.003359818286283781)
 
 s = actor_critic(num_episodes=100000000000,learning_rate_critic=1e-8,learning_rate_actor=1e-8,entropy_scalar=2.6366508987303556e-02)
 
