@@ -41,11 +41,16 @@ Xplane Settings set up is explained here.
 
   - Download FlyWithLua from the link or use the one already included in this repo
   
-#### Clone this repo
-    `git clone PASTE HTTPS OR SSH HERE`
+
 
     
-#### Installation
+-------------------------------------------
+### Installation guide
+----------------------------------------
+
+#### Clone this repo
+    git clone PASTE HTTPS OR SSH HERE
+    
   - Install Xplane
   - add XPlaneConnect Connection plugin to the `XPlane/Resource/plugins` folder.
   - Add FlyWithLua plugin to the `XPlane/Resource/plugins` folder.
